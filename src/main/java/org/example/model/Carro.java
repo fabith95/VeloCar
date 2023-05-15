@@ -4,9 +4,10 @@ public class Carro {
 
     private int velocidad;
     private int cambioVelocidad;
-    private int velocidadMax;
+    public static int MAX_VELOCIDAD = 100;
 
     public int getVelocidad(){
+
         return velocidad;
     }
 
@@ -14,21 +15,18 @@ public class Carro {
         Carro carro = new Carro();
 
         if (carro.velocidad == 0) {
-            cambioVelocidad = 1;
+            cambioVelocidad = 10;
         }
         return cambioVelocidad;
     }
 
+    public void acelerar() {
 
-    public int getVelocidadMax() {
-        Carro carro = new Carro();
-
-        velocidadMax = 0;
-        for (int i = 0; i < 80; i++) {
-            if (carro.cambioVelocidad < 80){
-                velocidadMax += 1;
-            }
+        if (velocidad < MAX_VELOCIDAD){
+        this.velocidad += 10;
+        }else {
+            throw new RuntimeException("No debes superar la velocidad " + MAX_VELOCIDAD);
         }
-        return velocidadMax;
+
     }
 }
