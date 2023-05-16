@@ -41,8 +41,6 @@ public class CarroTest {
         carro.acelerar();
         carro.acelerar();
         carro.acelerar();
-        carro.acelerar();
-        carro.acelerar();
         Assertions.assertThrows(RuntimeException.class, () -> carro.acelerar());
     }
 
@@ -52,5 +50,13 @@ public class CarroTest {
         carro.velocidad = 50;
         carro.decelerar(20);
         Assertions.assertEquals(30, carro.velocidad);
+    }
+
+    @Test
+    void frenarCarro(){
+        Carro carro = new Carro();
+        carro.velocidad = 30;
+        carro.frenar();
+        Assertions.assertEquals(0, carro.getVelocidad());
     }
 }

@@ -6,7 +6,7 @@ public class Carro {
 
     int velocidad;
     private int cambioVelocidad;
-    public static int MAX_VELOCIDAD = 100;
+    public static int MAX_VELOCIDAD = 80;
 
     public int getVelocidad() {
 
@@ -35,5 +35,11 @@ public class Carro {
         velocidad -= deceleracion;
     }
 
-
+    public void frenar() {
+        if (velocidad > 0) {
+            this.velocidad = 0;
+        }else {
+            throw new RuntimeException("Te encuentras a velocidad 0 km/h");
+        }
+    }
 }
