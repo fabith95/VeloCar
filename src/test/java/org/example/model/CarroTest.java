@@ -49,8 +49,21 @@ public class CarroTest {
     @Test
     void disminuirVelocidad(){
         Carro carro = new Carro();
+<<<<<<< HEAD
         carro.velocidad = 50;
         carro.decelerar(20);
         Assertions.assertEquals(30, carro.velocidad);
+=======
+        carro.decelerar();
+        carro.decelerar();
+        carro.decelerar();
+        carro.decelerar();
+        carro.decelerar();
+        carro.decelerar();
+        carro.decelerar();
+        carro.decelerar();
+        carro.decelerar();
+        Assertions.assertEquals(0, carro.getVelocidad());
+>>>>>>> c6117e305d467a4a184feb3314793ab7995bcdc1
     }
 }
